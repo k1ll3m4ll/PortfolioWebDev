@@ -1,0 +1,87 @@
+<html>
+    <head class="background">
+        <title>
+            5. Vorlesung
+        </title>
+        <link rel="stylesheet" href="PortfolioWebDev.css">
+        
+    </head>
+
+    <body>
+        <div class="background"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav ul li a");
+    const currentUrl = window.location.href;
+
+    links.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+});
+        </script>
+
+        <header>
+            <h1> Portfolio von Malik Baser</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html">Startseite</a></li>
+                <li> <a href="Kapitel1.html">Vorlesung 1</a></li>
+                <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
+                <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
+                <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
+                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
+                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
+                
+                <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
+                
+                
+            </ul>
+        </nav>
+        </header>
+
+    <main>
+
+    <h2>Zusammenfassung der 5. Vorlesung</h2>
+    <p>JavaScript-Objekte sind die Basis der Sprache und dienen zur Organisation von Daten und Funktionen. Jedes Objekt besteht aus Eigenschaften und Methoden, die zusammen die Funktionalität definieren. Sie sind unverzichtbar in der Arbeit mit Webseiten und Anwendungen.</p>
+
+    <center>
+    <img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL5\V5_Bild1.png" alt="Objekte in JavaScript">
+    </center>
+<br>
+<br>
+<br>
+    <p>Die Erzeugung von Objekten kann durch Konstruktoren, Objektliterale oder moderne Klassen erfolgen. JSON spielt eine wichtige Rolle bei der Datenübertragung und unterscheidet sich in einigen Details von der Objektliteral-Schreibweise.</p>
+    
+    <center>
+    <img src= "C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL5\V5_Bild2.png" alt="Erzeugung von Objekten">
+    </center>
+    <br> <br> <br>
+
+    <p>Klassen bieten zusätzliche Funktionen wie Vererbung und private Eigenschaften, die die Kapselung von Daten ermöglichen. Der Kontext in JavaScript wird über `this` dargestellt, und Methoden wie `bind` helfen, diesen Kontext zu kontrollieren.</p>
+    <center>
+    <img src= "C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL5\V5_Bild3.png" alt="Klassen und Vererbung">
+    </center>
+
+    <br> <br> <br>
+    <p>Mit dem Spread-Operator lassen sich Arrays und Objekte flexibel kombinieren, während Destructuring gezielten Zugriff auf Daten erlaubt. Diese Funktionen optimieren die Verarbeitung großer Datenmengen und erhöhen die Lesbarkeit des Codes.</p>
+    <center>
+    <img src= "C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL5\V5_Bild4.png" alt="Spread-Operator und Destructuring">
+    </center>
+
+   </main>
+</body>
+
+<br><br><br><br>
+<footer class="footer">
+    <div class="footer-container">
+        <a href="https://www.linkedin.com/in/malik-baser-a785a4239/?originalSubdomain=de" target="_blank">
+            <img src="Linkedin_Logo.png" alt="LinkedIn">
+        </a>
+    </div>
+    Connecte doch gerne mit mir auf LinkedIn.  
+</footer>
+</html>

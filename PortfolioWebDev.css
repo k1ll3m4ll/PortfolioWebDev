@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 340;
+    font-size: 24px; /* Add px for proper font size */
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
+    min-height: 100vh;
+    margin: 2px; /* Ensure no margin on body */
+    padding: 14px; /* Ensure no padding on body */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("Website_Background.jpg");
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the background image */
+    filter: blur(5px);
+    z-index: -1; /* Sends the background behind all other elements */
+}
+.secure-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Weiß mit Transparenz */
+    border: 2px solid red; /* Rote Umrandung */
+    padding: 20px; /* Abstand innerhalb des Kastens */
+    border-radius: 10px; /* Abgerundete Ecken */
+    margin: 18px 0; /* Abstand außen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Effekt */
+    color: #333;
+}
+pre {
+    background: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+    color: #f8f8f2; /* helle Schriftfarbe */
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto; /* horizontales Scrollen für lange Zeilen */
+    margin: 20px 0;
+}
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+}
+/* Farben für die Syntaxhervorhebung */
+.keyword { color: #ff79c6; } /* Schlüsselwörter */
+.function { color: #50fa7b; } /* Funktionen */
+.string { color: #f1fa8c; } /* Zeichenketten */
+.comment { color: #6272a4; font-style: italic; } /* Kommentare */
+
+
+/*TAbelle SP */
+.protection-measures table {
+    width: 100%; /* Tabelle nimmt die gesamte Breite ein */
+    border-collapse: collapse; /* Entfernt doppelte Umrandungen */
+    margin: 20px 0; /* Abstand um die Tabelle herum */
+}
+
+.protection-measures table td {
+    vertical-align: top; /* Text oben ausrichten */
+    padding: 10px; /* Abstand innerhalb der Zellen */
+    border: 1px solid #ddd; /* Leichte Umrandung der Zellen */
+}
+
+.protection-measures h3 {
+    margin-top: 0; /* Kein zusätzlicher Abstand oben */
+}
+
+.protection-measures ul {
+    padding-left: 20px; /* Einzug für Listenpunkte */
+    list-style-type: disc; /* Standard-Listenpunkte */
+    font-size: large;
+}
+
+
+
+header {
+    width: 100%; /* Ensure the header spans the full width */
+    text-align: center;
+    background: transparent; /* Ensure transparency if needed */
+    z-index: 1; /* Bring header above the background */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    background-color: #f3f3f3;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    z-index: 2; /* Navbar appears above background */
+}
+
+nav ul li {
+    float: left;
+}
+nav ul li a.active {
+    background-color: blue; /* Vollständig ausgefüllte Hintergrundfarbe */
+    color: white; /* Textfarbe anpassen */
+}
+
+nav ul li a {
+    font-size: 22px; /* Add px for proper font size */
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+}
+
+.footer {
+    background-color: darkmagenta;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure footer is above the background */
+}
+
+.footer-container {
+    display: inline-block;
+    background-color: wheat;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.footer img {
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.footer img:hover {
+    transform: scale(1.1);
+}
+
+canvas {
+    border: 2px solid #333;
+    width: 86vw;
+    height: 55vw;
+    background-color: #ffffff;
+}
+#playButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#playButton:hover {
+    background-color: #005fa3;
+}
+img{
+    max-width: 60%;
+    max-height: fit-content;
+    
+}
+

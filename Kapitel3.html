@@ -1,0 +1,96 @@
+<html>
+    <head class="background">
+        <title>
+            3. Vorlesung
+        </title>
+        <link rel="stylesheet" href="PortfolioWebDev.css">
+        
+    </head>
+
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav ul li a");
+    const currentUrl = window.location.href;
+
+    links.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+});
+        </script>
+        <div class="background"></div>
+
+        <header>
+            <h1> Portfolio von Malik Baser</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html">Startseite</a></li>
+                <li> <a href="Kapitel1.html">Vorlesung 1</a></li>
+                <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
+                <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
+                <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
+                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
+                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
+                
+                <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
+                
+                
+            </ul>
+        </nav>
+        </header>
+        
+        
+        <main>
+            <section>
+              <h2>Hyperlinks und Text-Tags</h2>
+              <p>Hyperlinks ermöglichen die Verknüpfung zwischen Ressourcen und werden mit dem <code>&lt;a&gt;</code>-Tag definiert. Wichtige Attribute sind <code>href</code> für die Zieladresse und <code>target</code> für die Art der Öffnung des Links.</p>
+              <p>Beispiel eines Links:</p>
+               <center> <code style="color: violet;">&lt;a href="https://example.com" target="_blank"&gt;Besuche Example&lt;/a&gt;</code> </center>
+              <p>Zusätzlich gibt es semantische Text-Tags wie <code>&lt;strong&gt;</code> für wichtige Texte oder <code>&lt;em&gt;</code> für Betonungen.</p>
+            </section>
+            
+            <section>
+              <h2>Struktur und Integration von Medien</h2>
+              <p>Die empfohlene Projektstruktur sieht eine klare Trennung von HTML-Dateien, CSS und Bildern vor. Relative Pfade stellen sicher, dass Dateien effizient referenziert werden können.</p>
+              <p>Ein Beispiel für eine Verzeichnisstruktur:</p>
+              <center>
+              <code style="color: yellow;">
+              /projekt<br>
+                /css<br>
+                  style.css<br>
+                /images<br>
+                  bild1.jpg<br>
+                  bild2.png<br>
+                index.html<br>
+                kontakt.html<br>
+              </code>
+              </center>
+              <p>Bilder werden über den <code>&lt;img&gt;</code>-Tag eingebunden. Beispiel:</p>
+              
+              <center><code style="color: yellowgreen;">&lt;img src="images/bild1.jpg" alt="Ein Beispielbild"&gt;</code> </center>
+              <p>Weitere Mediendarstellungen wie Programmcode werden mit <code>&lt;code&gt;</code>-Tags hervorgehoben.</p>
+              
+            </section>
+          </main>
+          
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    <br><br><br><br>
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="https://www.linkedin.com/in/malik-baser-a785a4239/?originalSubdomain=de" target="_blank">
+                <img src="Linkedin_Logo.png" alt="LinkedIn">
+            </a>
+        </div>
+        Connecte doch gerne mit mir auf LinkedIn.  
+    </footer>
+</html>

@@ -1,0 +1,107 @@
+<html>
+    <head class="background">
+        <title>
+            6. Vorlesung
+        </title>
+        <link rel="stylesheet" href="PortfolioWebDev.css">
+        
+    </head>
+
+    <body>
+        <div class="background"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav ul li a");
+    const currentUrl = window.location.href;
+
+    links.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+});
+        </script>
+
+        <header>
+            <h1> Portfolio von Malik Baser</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html">Startseite</a></li>
+                <li> <a href="Kapitel1.html">Vorlesung 1</a></li>
+                <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
+                <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
+                <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
+                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
+                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
+                
+                <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
+                
+                
+            </ul>
+        </nav>
+        </header>
+
+        <main>
+            <section>
+              <h2>Einführung in JavaScript-Bibliotheken und Frameworks</h2>
+              <p>In der Webentwicklung sind JavaScript-Bibliotheken und -Frameworks entscheidende Werkzeuge, die Entwicklern helfen, die Programmierung von interaktiven Webseiten zu vereinfachen und zu beschleunigen. Während **Bibliotheken** wie **jQuery** eine Sammlung von Funktionen bieten, die nach Bedarf integriert werden, stellen **Frameworks** wie **Angular** und **React** eine komplette Struktur zur Verfügung, die den gesamten Entwicklungsprozess leitet und strukturiert. Frameworks und Bibliotheken verringern den Codeaufwand, verbessern die Wartbarkeit und erleichtern das Arbeiten in Teams. Durch den Einsatz dieser Technologien können Entwickler sich auf das Wesentliche konzentrieren, anstatt sich um wiederkehrende Probleme wie Browserkompatibilität oder grundlegende DOM-Manipulationen zu kümmern.</p>
+              <center><img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\Bild1.png" alt="Unterschied zwischen Bibliothek und Framework"></center>
+              <br><br><br>
+            </section>
+          
+            <section>
+              <h2>Die jQuery-Bibliothek und ihre Vorteile</h2>
+              <p>Ein herausragendes Beispiel für eine JavaScript-Bibliothek ist **jQuery**, die 2006 eingeführt wurde und seither zu einem der meistgenutzten Tools in der Webentwicklung geworden ist. Mit jQuery können Entwickler HTML-Dokumente, Events, Animationen und AJAX-Anfragen mit minimalem Aufwand bearbeiten. Dies geschieht durch eine einfach verständliche Syntax, die im Vergleich zu reinem JavaScript deutlich kürzer ist und eine breite Unterstützung für ältere Browser bietet. Ein zentrales Merkmal von jQuery ist seine Fähigkeit, mit der **DOM-Struktur** (Document Object Model) zu arbeiten. Die DOM-Struktur stellt die HTML-Dokumente als baumartige Struktur dar, die es ermöglicht, jedes Element einer Webseite gezielt anzusprechen und zu manipulieren. jQuery abstrahiert die Unterschiede zwischen den verschiedenen Browsern und sorgt so dafür, dass derselbe Code auf allen modernen Browsern zuverlässig ausgeführt wird.</p>
+              <center><img src="C:\Users\malik\OneDrive\Bilder\Screenshots\Screenshot 2024-12-02 211132.png" alt="Beispiel für jQuery-Code"> </center>
+              <br><br><br>
+            </section>
+          
+            <section>
+              <h2>Frameworks wie React und Angular im Detail</h2>
+              <p>Frameworks wie **React** und **Angular** bieten noch weitergehende Lösungen für die Webentwicklung. **React**, entwickelt von Facebook, konzentriert sich speziell auf die Erstellung von Benutzeroberflächen und erlaubt es Entwicklern, dynamische und reaktive Webanwendungen zu bauen. Ein wesentliches Merkmal von React ist die **virtuelle DOM-Technologie**, bei der Änderungen an der Benutzeroberfläche nicht sofort in den tatsächlichen DOM übertragen werden. Stattdessen wird zunächst eine virtuelle Repräsentation der Seite geändert, und nur die Teile der Seite, die sich tatsächlich verändert haben, werden neu gerendert. Diese Technik sorgt für eine deutliche Verbesserung der Performance, insbesondere bei komplexeren Anwendungen.</p>
+              <p>**Angular**, ein weiteres weit verbreitetes Framework, geht noch einen Schritt weiter und bietet eine komplette Lösung für den Aufbau von Single-Page-Webanwendungen (SPAs). Angular verwendet eine deklarative Syntax und stellt viele Tools für Routing, Formularvalidierung, HTTP-Anfragen und andere typische Aufgaben zur Verfügung. Im Gegensatz zu React verwendet Angular **TypeScript**, eine superset von JavaScript, das zusätzliche Funktionen wie statische Typisierung und fortschrittliche Fehlererkennung bietet. Dadurch wird die Entwicklung skalierbarer und wartbarer, da Fehler früher im Entwicklungsprozess erkannt werden können.</p>
+              <center><img src="https://th.bing.com/th/id/OIP.aEEia97x4r6zsPQEH3jKDAHaFy?rs=1&pid=ImgDetMain" alt=""></center>
+              <br><br><br>
+            </section>
+          
+            <section>
+              <h2>Die Bedeutung von Plugins in der Webentwicklung</h2>
+              <p>Ein weiteres wichtiges Konzept in der modernen Webentwicklung sind **Plugins**. Plugins sind Erweiterungen für bestehende Frameworks oder Bibliotheken, die zusätzliche Funktionen hinzufügen, ohne dass der Entwickler den bestehenden Code umfassend anpassen muss. Sie bieten eine einfache Möglichkeit, neue Features wie Animationen, Validierungen oder die Integration von externen Datenquellen in eine Webanwendung einzubinden. Ein populäres Beispiel ist das jQuery-Plugin-System, das es Entwicklern ermöglicht, jQuery schnell und einfach zu erweitern. Plugins erleichtern die Arbeit, indem sie vorgefertigte Lösungen für häufige Probleme anbieten und die Entwicklungszeit erheblich verkürzen. So muss der Entwickler nicht jedes Feature von Grund auf neu schreiben.</p>
+              <p>Ein häufig verwendetes jQuery-Plugin ist etwa das **Slick-Slider-Plugin**, mit dem Entwickler ganz einfach interaktive Karussells und Sliders auf ihrer Webseite erstellen können. Plugins wie diese bieten eine enorme Zeitersparnis, da sie komplexe Funktionen bereitstellen, die sofort eingesetzt werden können. Darüber hinaus gibt es auch spezialisierte Plugins, die komplexe Aufgaben wie die Visualisierung von Daten oder die Integration von Social Media-Feeds ermöglichen.</p>
+              
+              <br><br><br>
+            </section>
+          
+            <section>
+              <h2>Verwendung des `<span>`-Tags in HTML</h2>
+              <p>Ein weiteres häufig genutztes HTML-Element ist das **`<span>`-Tag**, das als Inline-Element verwendet wird. Das `<span>`-Tag hat an sich keine besondere Bedeutung, sondern wird genutzt, um kleine Textabschnitte oder andere Inline-Elemente zu gruppieren und zu stylen. Anders als Block-Elemente wie das `<div>`-Tag beeinflusst das `<span>`-Tag nicht den Layoutfluss der Seite, sondern bleibt im Textfluss. Es wird häufig genutzt, um bestimmten Text zu formatieren oder ihn später über JavaScript zu bearbeiten. Beispielsweise kann man mit dem `<span>`-Tag bestimmte Wörter in einem Satz farblich hervorheben, ohne dass die restliche Struktur des Dokuments beeinflusst wird.</p>
+              <p>Das `<span>`-Tag kann in Verbindung mit CSS verwendet werden, um einzelne Teile eines Textes zu stilisieren. Ebenso eignet es sich hervorragend für den Einsatz in JavaScript, um dynamische Inhalte anzuzeigen oder Event-Handler hinzuzufügen. Ein Beispiel für die Nutzung von `<span>` wäre die Markierung eines Wortes in einem Text, das dann durch eine Mouseover-Interaktion eine neue Farbe annimmt. Hierbei bleibt das Layout des Textes unangetastet, und die Interaktivität wird ausschließlich durch das JavaScript hinzugefügt.</p>
+             
+              <br><br><br>
+            </section>
+          
+            <section>
+              <h2>Interaktion mit der DOM-Struktur</h2>
+              <p>Die **DOM-Struktur** (Document Object Model) ist die grundlegende Repräsentation eines HTML-Dokuments in Form eines Baumes, bei dem jedes Element als Knoten des Baums dargestellt wird. Diese Struktur ermöglicht es, die Inhalte einer Webseite durch JavaScript zu manipulieren. jQuery und andere JavaScript-Bibliotheken bieten Entwicklern einfache Möglichkeiten, auf diese Struktur zuzugreifen und Elemente zu verändern. Dabei müssen sich Entwickler nicht mit den technischen Details der DOM-Interaktion auf niedriger Ebene auseinandersetzen. Stattdessen können sie über einfache und intuitive Methoden mit der DOM-Struktur arbeiten, etwa durch das Auswählen von Elementen anhand ihrer ID, Klasse oder anderen Attributen.</p>
+              <p>Ein Beispiel ist die jQuery-Methode <a style="color: green;"> `$('#elementId')`</a>, die es ermöglicht, ein Element mit einer bestimmten ID auszuwählen und dessen Eigenschaften oder Inhalte zu verändern. Diese Abstraktion macht die Arbeit mit der DOM-Struktur besonders einfach und zugänglich, da die Entwickler sich keine Gedanken über Browser-Inkompatibilitäten oder komplexe API-Aufrufe machen müssen.</p>
+              
+              <br><br><br>
+            </section>
+          </main>
+          
+              
+        
+        
+            
+        </body>
+        <br><br><br><br>
+        <footer class="footer">
+            <div class="footer-container">
+                <a href="https://www.linkedin.com/in/malik-baser-a785a4239/?originalSubdomain=de" target="_blank">
+                    <img src="Linkedin_Logo.png" alt="LinkedIn">
+                </a>
+            </div>
+            Connecte doch gerne mit mir auf LinkedIn.  
+        </footer>
+        </html>

@@ -1,0 +1,129 @@
+<html>
+    <head class="background">
+        <title>
+            1.Vorlesung
+        </title>
+        <link rel="stylesheet" href="PortfolioWebDev.css">
+        
+    </head>
+
+    <body>
+        <div class="background"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav ul li a");
+    const currentUrl = window.location.href;
+
+    links.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+});
+        </script>
+
+        <header>
+            <h1> Portfolio von Malik Baser</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html">Startseite</a></li>
+                <li> <a href="Kapitel1.html">Vorlesung 1</a></li>
+                <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
+                <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
+                <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
+                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
+                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
+                
+                <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
+                
+                
+            </ul>
+        </nav>
+        </header>
+
+
+        <main>
+            <h1>Zusammenfassung Webentwicklung</h1>
+    
+    <h2>HTML als Auszeichnungssprache</h2>
+    <p>
+        HTML (HyperText Markup Language) ist eine textbasierte Auszeichnungssprache und dient zur 
+        Strukturierung und Darstellung von Inhalten auf Webseiten. Sie beschreibt die logische 
+        Struktur von Dokumenten mit Hilfe von Tags, die in Winkelklammern geschrieben werden 
+        (z. B. <code>&lt;p&gt;</code> für einen Absatz). HTML ist keine Programmiersprache, sondern 
+        ermöglicht das semantische Markieren von Inhalten wie Text, Bildern und Links.
+    </p>
+
+    <h2>Die DOM-Struktur</h2>
+    <p>
+        Das Document Object Model (DOM) ist eine baumartige Repräsentation einer HTML-Dokumentstruktur. 
+        Jeder Knoten im Baum stellt ein Element, Attribut oder Text dar. Der oberste Knoten ist das 
+        <code>document</code>, das Wurzelelement wird durch <code>&lt;html&gt;</code> repräsentiert. 
+        Untergeordnete Knoten sind z. B. <code>&lt;head&gt;</code> und <code>&lt;body&gt;</code>, die 
+        wiederum weitere Elemente wie <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, 
+        <code>&lt;img&gt;</code> oder <code>&lt;script&gt;</code> enthalten können. Diese Struktur 
+        erlaubt es JavaScript, auf HTML-Elemente zuzugreifen und sie zu manipulieren.
+    </p>
+    <center>
+    <img src="C:\Users\malik\Downloads\DOM_Tree.gif" alt="Beispielhafte Darstellung einer DOM-Struktur">
+    </center>
+    <h2>Events in JavaScript</h2>
+    <p>
+        Events sind Ereignisse, die während der Interaktion mit einer Webseite auftreten. 
+        Sie spielen eine zentrale Rolle in der Interaktivität. Beispiele für Events sind:
+    </p>
+    <ul>
+        <li><strong>click:</strong> Ausgelöst, wenn ein Benutzer auf ein Element klickt.</li>
+        <li><strong>mouseover:</strong> Tritt auf, wenn der Mauszeiger über ein Element bewegt wird.</li>
+        <li><strong>keydown:</strong> Wird ausgelöst, wenn eine Taste auf der Tastatur gedrückt wird.</li>
+        <li><strong>submit:</strong> Aktiviert, wenn ein Formular übermittelt wird.</li>
+    </ul>
+    <p>
+        Events können durch Event-Listener behandelt werden, die bestimmten Code ausführen, 
+        sobald das Ereignis eintritt.
+    </p>
+    
+    
+    <h2>Compiler vs. Interpreter</h2>
+    <p>
+        Ein Compiler übersetzt den gesamten Quellcode einer Programmiersprache vor der Ausführung in 
+        Maschinensprache und generiert eine ausführbare Datei. Beispiele hierfür sind Sprachen wie 
+        C++ oder Java.
+    </p>
+    <p>
+        Ein Interpreter hingegen liest und führt den Quellcode Schritt für Schritt aus, ohne eine 
+        Zwischenübersetzung in Maschinensprache zu speichern. Beispiele hierfür sind JavaScript oder 
+        Python. Während ein Compiler in der Regel schneller ausgeführte Programme ermöglicht, 
+        erlaubt ein Interpreter einfachere und dynamischere Anpassungen während der Laufzeit.
+    </p>
+    <center>
+    <img src="C:\Users\malik\Downloads\Com vs Int.jpeg" alt="Vergleich zwischen Compiler und Interpreter">
+    </center>
+    <h2>JavaScript und DOM-Manipulation</h2>
+    <p>
+        Mit JavaScript lassen sich Inhalte und Attribute von DOM-Elementen verändern. Zum Beispiel kann 
+        durch folgende Codezeile der Text eines <code>&lt;p&gt;</code>-Elements aktualisiert werden:
+    </p>
+    <pre><code>document.getElementById("example").textContent = "Neuer Textinhalt";</code></pre>
+    <p>
+        Auch das Hinzufügen von Event-Listenern zur Reaktion auf Benutzeraktionen ist ein zentraler Aspekt:
+    </p>
+    <pre class="code-class"><code>
+document.querySelector("button").addEventListener("click", function() {
+    alert("Button wurde geklickt!");
+});
+    </code></pre>
+    
+       </main>
+    </body>
+    <br><br><br><br>
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="https://www.linkedin.com/in/malik-baser-a785a4239/?originalSubdomain=de" target="_blank">
+                <img src="Linkedin_Logo.png" alt="LinkedIn">
+            </a>
+        </div>
+        Connecte doch gerne mit mir auf LinkedIn.  
+    </footer>
+</html>

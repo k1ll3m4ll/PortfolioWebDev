@@ -1,0 +1,101 @@
+<html>
+    <head class="background">
+        <title>
+            2. Vorlesung
+        </title>
+        <link rel="stylesheet" href="PortfolioWebDev.css">
+        
+    </head>
+
+    <body>
+        <div class="background"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav ul li a");
+    const currentUrl = window.location.href;
+
+    links.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+});
+        </script>
+
+        <header>
+            <h1> Portfolio von Malik Baser</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html">Startseite</a></li>
+                <li> <a href="Kapitel1.html">Vorlesung 1</a></li>
+                <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
+                <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
+                <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
+                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
+                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
+                
+                <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
+                
+                
+            </ul>
+        </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Entwicklungsumgebung und Einrichtung</h2>
+                <p>Visual Studio Code ist ein plattformübergreifender Editor für die Entwicklung in JavaScript. Mit Node.js kann JavaScript auch serverseitig verwendet werden, was die Anwendungsmöglichkeiten erweitert.</p>
+                <p>Nach der Installation können die Versionen von Node.js und npm mit <code>node -v</code> und <code>npm -v</code> überprüft werden. Alternativen wie Atom und Brackets eignen sich besonders für Anfänger.</p>
+                <center>
+                <img src= "https://th.bing.com/th?id=OIP.ORnlsvc38UKkWSEyDmZjggHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2" alt="Entwicklungsumgebung">
+            </center>
+            </section> <br><br><br><br>
+        
+            <section>
+                <h2>Variablen und Datentypen</h2>
+                <p>JavaScript unterstützt die Deklaration mit <code>let</code>, <code>const</code> und <code>var</code>. Der Typ der Variablen ist flexibel, z. B. kann eine Zahl später in einen Text umgewandelt werden.</p>
+                <p>Primitive Datentypen sind <strong>number</strong>, <strong>string</strong>, <strong>boolean</strong>, <strong>null</strong>, <strong>undefined</strong>, während Arrays und Objekte komplexe Typen darstellen.</p>
+                <center>
+                <img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\Vars und zugriff.png" alt="Variablen und Datentypen">
+                </center>
+                <br><br><br><br>
+                <center>
+
+                
+                <img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\dynamic_typ.png" alt="Dynamische Typisierung">
+            </center>
+            </section> <br><br><br><br>
+        
+            <section>
+                <h2>Kontrollstrukturen</h2>
+                <p>JavaScript bietet <code>if-else</code>-Bedingungen und Schleifen wie <code>for</code> und <code>while</code>, um den Programmfluss zu steuern. Eine Besonderheit ist die automatische Typkonvertierung, z. B. wenn <code>prompt()</code> einen String zurückgibt, selbst wenn Zahlen eingegeben werden.</p>
+                
+                <center><img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\if else.png" alt="Kontrollstrukturen Beispiel">
+            </center>
+                </section>
+        
+                <br><br><br><br>
+            <section>
+                <h2>Funktionen</h2>
+                <p>Funktionen können deklarativ oder als Pfeilfunktionen definiert werden. Pure Functions haben keine Seiteneffekte und liefern Ergebnisse nur basierend auf ihren Eingaben. Higher-Order Functions wie <code>map</code> und <code>filter</code> sind essenziell für funktionale Programmierung.</p>
+                <center><img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\Pfeil.png" alt="Pfeilfunktionen">
+            </center>
+                </section>
+        
+            
+        </main>
+        
+        
+
+       
+    </body>
+    <br><br><br><br><br><br>
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="https://www.linkedin.com/in/malik-baser-a785a4239/?originalSubdomain=de" target="_blank">
+                <img src="Linkedin_Logo.png" alt="LinkedIn">
+            </a>
+        </div>
+        Connecte doch gerne mit mir auf LinkedIn.  
+    </footer>
+</html>
