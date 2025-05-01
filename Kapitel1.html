@@ -46,78 +46,132 @@
         <main>
             <h1>Zusammenfassung Webentwicklung</h1>
     
-    <h2>HTML als Auszeichnungssprache</h2>
-    <p>
-        HTML (HyperText Markup Language) ist eine textbasierte Auszeichnungssprache und dient zur 
-        Strukturierung und Darstellung von Inhalten auf Webseiten. Sie beschreibt die logische 
-        Struktur von Dokumenten mit Hilfe von Tags, die in Winkelklammern geschrieben werden 
-        (z. B. <code>&lt;p&gt;</code> für einen Absatz). HTML ist keine Programmiersprache, sondern 
-        ermöglicht das semantische Markieren von Inhalten wie Text, Bildern und Links.
-    </p>
+            <h2>Netzwerkkommunikation und Client-Server-Architektur</h2>
 
-    <h2>Die DOM-Struktur</h2>
-    <p>
-        Das Document Object Model (DOM) ist eine baumartige Repräsentation einer HTML-Dokumentstruktur. 
-        Jeder Knoten im Baum stellt ein Element, Attribut oder Text dar. Der oberste Knoten ist das 
-        <code>document</code>, das Wurzelelement wird durch <code>&lt;html&gt;</code> repräsentiert. 
-        Untergeordnete Knoten sind z. B. <code>&lt;head&gt;</code> und <code>&lt;body&gt;</code>, die 
-        wiederum weitere Elemente wie <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, 
-        <code>&lt;img&gt;</code> oder <code>&lt;script&gt;</code> enthalten können. Diese Struktur 
-        erlaubt es JavaScript, auf HTML-Elemente zuzugreifen und sie zu manipulieren.
-    </p>
-    <center>
-    <img src="C:\Users\malik\Downloads\DOM_Tree.gif" alt="Beispielhafte Darstellung einer DOM-Struktur">
-    </center>
-    <h2>Events in JavaScript</h2>
-    <p>
-        Events sind Ereignisse, die während der Interaktion mit einer Webseite auftreten. 
-        Sie spielen eine zentrale Rolle in der Interaktivität. Beispiele für Events sind:
-    </p>
-    <ul>
-        <li><strong>click:</strong> Ausgelöst, wenn ein Benutzer auf ein Element klickt.</li>
-        <li><strong>mouseover:</strong> Tritt auf, wenn der Mauszeiger über ein Element bewegt wird.</li>
-        <li><strong>keydown:</strong> Wird ausgelöst, wenn eine Taste auf der Tastatur gedrückt wird.</li>
-        <li><strong>submit:</strong> Aktiviert, wenn ein Formular übermittelt wird.</li>
-    </ul>
-    <p>
-        Events können durch Event-Listener behandelt werden, die bestimmten Code ausführen, 
-        sobald das Ereignis eintritt.
-    </p>
-    
-    
-    <h2>Compiler vs. Interpreter</h2>
-    <p>
-        Ein Compiler übersetzt den gesamten Quellcode einer Programmiersprache vor der Ausführung in 
-        Maschinensprache und generiert eine ausführbare Datei. Beispiele hierfür sind Sprachen wie 
-        C++ oder Java.
-    </p>
-    <p>
-        Ein Interpreter hingegen liest und führt den Quellcode Schritt für Schritt aus, ohne eine 
-        Zwischenübersetzung in Maschinensprache zu speichern. Beispiele hierfür sind JavaScript oder 
-        Python. Während ein Compiler in der Regel schneller ausgeführte Programme ermöglicht, 
-        erlaubt ein Interpreter einfachere und dynamischere Anpassungen während der Laufzeit.
-    </p>
-    <center>
-    <img src="C:\Users\malik\Downloads\Com vs Int.jpeg" alt="Vergleich zwischen Compiler und Interpreter">
-    </center>
-    <h2>JavaScript und DOM-Manipulation</h2>
-    <p>
-        Mit JavaScript lassen sich Inhalte und Attribute von DOM-Elementen verändern. Zum Beispiel kann 
-        durch folgende Codezeile der Text eines <code>&lt;p&gt;</code>-Elements aktualisiert werden:
-    </p>
-    <pre><code>document.getElementById("example").textContent = "Neuer Textinhalt";</code></pre>
-    <p>
-        Auch das Hinzufügen von Event-Listenern zur Reaktion auf Benutzeraktionen ist ein zentraler Aspekt:
-    </p>
-    <pre class="code-class"><code>
-document.querySelector("button").addEventListener("click", function() {
-    alert("Button wurde geklickt!");
-});
-    </code></pre>
-    
-       </main>
+            <p>
+                Die Vorlesung behandelt die Grundlagen der verteilten Systeme, insbesondere die Kommunikation zwischen Clients und Servern. Der Client ist typischerweise der schwächere Rechner (z.B. PC, Smartphone), während der Server leistungsfähiger ist und Dienste bereitstellt. Historisch entwickelten sich verschiedene Netzwerkarchitekturen von DECNET und IBM SNA in den 1970er Jahren über LAN (Ethernet) in den 1980ern bis zum modernen Internet (IP) ab den 1990ern.
+            </p>
+            
+            <center>
+                <img src="client_server_architektur.jpg" alt="Darstellung der Client-Server-Architektur">
+            </center>
+            
+            <h2>Serverseitige Technologien</h2>
+            
+            <p>
+                Serverseitige Technologien ermöglichen die dynamische Generierung von Webinhalten. Wichtige Konzepte sind:
+            </p>
+            
+            <ul>
+                <li><strong>CGI (Common Gateway Interface):</strong> Eine veraltete Technologie (1994-1995), die Sicherheits- und Performance-Probleme aufweist.</li>
+                <li><strong>PHP:</strong> Eine Skriptsprache, die in HTML eingebettet wird und häufig mit Datenbanken wie MySQL kombiniert wird.</li>
+                <li><strong>Java Servlets & JSP:</strong> Java-basierte Technologien für serverseitige Verarbeitung.</li>
+                <li><strong>Node.js:</strong> Eine Laufzeitumgebung für JavaScript, die serverseitige Programmierung ermöglicht.</li>
+            </ul>
+            
+            <center>
+                <img src="php_workflow.jpg" alt="Workflow der PHP-Verarbeitung">
+            </center>
+            
+            <h2>Java Serialisierung und Streams</h2>
+            
+            <p>
+                Die Serialisierung von Objekten in Java ermöglicht das Speichern des Objektzustands. Ein Objektgraph wird dabei vollständig gespeichert, inklusive aller referenzierten Objekte. Für die Serialisierung muss die Klasse das <code>Serializable</code>-Interface implementieren. Transiente Variablen werden nicht serialisiert.
+            </p>
+            
+            <p>
+                Java verwendet Streams für Ein- und Ausgabeoperationen. Wichtige Klassen sind:
+            </p>
+            
+            <ul>
+                <li><code>FileInputStream</code>/<code>FileOutputStream</code> für Dateizugriffe</li>
+                <li><code>ObjectInputStream</code>/<code>ObjectOutputStream</code> für die Serialisierung</li>
+                <li><code>BufferedReader</code>/<code>BufferedWriter</code> für gepufferte Ein-/Ausgabe</li>
+            </ul>
+            
+            <center>
+                <img src="java_serialization.jpg" alt="Java Serialisierungsprozess">
+            </center>
+            
+            <h2>Dateiverarbeitung in Java</h2>
+            
+            <p>
+                Die Klasse <code>java.io.File</code> repräsentiert Dateien und Verzeichnisse. Wichtige Methoden sind:
+            </p>
+            
+            <ul>
+                <li><code>mkdir()</code> - Erstellt ein Verzeichnis</li>
+                <li><code>list()</code> - Listet Verzeichnisinhalte auf</li>
+                <li><code>delete()</code> - Löscht eine Datei</li>
+                <li><code>exists()</code> - Prüft Existenz</li>
+            </ul>
+            
+            <p>
+                Für Textdateien werden <code>FileReader</code> und <code>FileWriter</code> verwendet, während für Binärdaten <code>DataInputStream</code> und <code>DataOutputStream</code> zum Einsatz kommen.
+            </p>
+            
+            <center>
+                <img src="file_operations.jpg" alt="Java Dateioperationen">
+            </center>
+            
+            <h2>Netzwerkkomponenten</h2>
+            
+            <p>
+                Netzwerkkomponenten wie Bridges und Switches spielen eine wichtige Rolle in verteilten Systemen:
+            </p>
+            
+            <ul>
+                <li><strong>Bridges:</strong> Verbinden Netzwerksegmente und filtern Frames basierend auf MAC-Adressen</li>
+                <li><strong>Switches:</strong> Sind Multiport-Bridges, die Kollisionsdomänen eliminieren und parallele Verbindungen ermöglichen</li>
+            </ul>
+            
+            <p>
+                Switches arbeiten hardwarebasiert und verwenden Store-and-Forward oder Cut-Through Switching für effiziente Datenübertragung.
+            </p>
+            
+            <center>
+                <img src="network_components.jpg" alt="Netzwerkkomponenten">
+            </center>
+            
+            <h2>Clientseitige Technologien</h2>
+            
+            <p>
+                Neben serverseitigen Technologien gibt es wichtige clientseitige Ansätze:
+            </p>
+            
+            <ul>
+                <li><strong>JavaScript und Frameworks:</strong> Für dynamische Webinhalte</li>
+                <li><strong>Java Applets:</strong> Veraltet und aus Sicherheitsgründen nicht mehr empfohlen</li>
+                <li><strong>Native Apps:</strong> Swift für iOS, Java für Android</li>
+                <li><strong>Hybride Apps:</strong> Kombinieren Web- und Native-Technologien</li>
+            </ul>
+            
+            <center>
+                <img src="client_technologies.jpg" alt="Clientseitige Technologien">
+            </center>
+            
+            <h2>Datenbankanbindung</h2>
+            
+            <p>
+                Die Verbindung zwischen Webanwendungen und Datenbanken ist ein zentrales Thema. Ein typischer Workflow:
+            </p>
+            
+            <ol>
+                <li>Benutzer gibt Daten in ein Formular ein</li>
+                <li>Webserver startet PHP-Skript</li>
+                <li>PHP führt Datenbankabfrage durch</li>
+                <li>Datenbank liefert Ergebnisse</li>
+                <li>PHP generiert HTML-Ausgabe</li>
+                <li>Webserver sendet Ergebnis an Client</li>
+            </ol>
+            
+            <center>
+                <img src="database_connection.jpg" alt="Datenbankanbindung im Web">
+            </center>
+        </main>
     </body>
-    <br><br><br><br>
+    
+    <br><br>
     <footer class="footer">
         <div class="footer-container">
             <a href="https://www.linkedin.com/in/malik-baser-a785a4239/?originalSubdomain=de" target="_blank">
@@ -126,4 +180,4 @@ document.querySelector("button").addEventListener("click", function() {
         </div>
         Connecte doch gerne mit mir auf LinkedIn.  
     </footer>
-</html>
+    </html>

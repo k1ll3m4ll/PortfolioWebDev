@@ -43,51 +43,75 @@
         </header>
         <main>
             <section>
-                <h2>Entwicklungsumgebung und Einrichtung</h2>
-                <p>Visual Studio Code ist ein plattformübergreifender Editor für die Entwicklung in JavaScript. Mit Node.js kann JavaScript auch serverseitig verwendet werden, was die Anwendungsmöglichkeiten erweitert.</p>
-                <p>Nach der Installation können die Versionen von Node.js und npm mit <code>node -v</code> und <code>npm -v</code> überprüft werden. Alternativen wie Atom und Brackets eignen sich besonders für Anfänger.</p>
-                <center>
-                <img src= "https://th.bing.com/th?id=OIP.ORnlsvc38UKkWSEyDmZjggHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2" alt="Entwicklungsumgebung">
-            </center>
-            </section> <br><br><br><br>
-        
-            <section>
-                <h2>Variablen und Datentypen</h2>
-                <p>JavaScript unterstützt die Deklaration mit <code>let</code>, <code>const</code> und <code>var</code>. Der Typ der Variablen ist flexibel, z. B. kann eine Zahl später in einen Text umgewandelt werden.</p>
-                <p>Primitive Datentypen sind <strong>number</strong>, <strong>string</strong>, <strong>boolean</strong>, <strong>null</strong>, <strong>undefined</strong>, während Arrays und Objekte komplexe Typen darstellen.</p>
-                <center>
-                <img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\Vars und zugriff.png" alt="Variablen und Datentypen">
-                </center>
-                <br><br><br><br>
-                <center>
+                <h2>Netzwerkprogrammierung mit Sockets</h2>
 
-                
-                <img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\dynamic_typ.png" alt="Dynamische Typisierung">
-            </center>
-            </section> <br><br><br><br>
-        
-            <section>
-                <h2>Kontrollstrukturen</h2>
-                <p>JavaScript bietet <code>if-else</code>-Bedingungen und Schleifen wie <code>for</code> und <code>while</code>, um den Programmfluss zu steuern. Eine Besonderheit ist die automatische Typkonvertierung, z. B. wenn <code>prompt()</code> einen String zurückgibt, selbst wenn Zahlen eingegeben werden.</p>
-                
-                <center><img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\if else.png" alt="Kontrollstrukturen Beispiel">
-            </center>
-                </section>
-        
-                <br><br><br><br>
-            <section>
-                <h2>Funktionen</h2>
-                <p>Funktionen können deklarativ oder als Pfeilfunktionen definiert werden. Pure Functions haben keine Seiteneffekte und liefern Ergebnisse nur basierend auf ihren Eingaben. Higher-Order Functions wie <code>map</code> und <code>filter</code> sind essenziell für funktionale Programmierung.</p>
-                <center><img src="C:\Users\malik\OneDrive\Desktop\Bilder aus Vorlesung Webdev\VL2\Pfeil.png" alt="Pfeilfunktionen">
-            </center>
-                </section>
-        
-            
-        </main>
-        
-        
+<p>
+    Die Vorlesung behandelt die Grundlagen der Netzwerkprogrammierung in Java, insbesondere die Verwendung von Sockets für die Client-Server-Kommunikation. Ein Socket repräsentiert eine Verbindung zwischen zwei Anwendungen, die auf verschiedenen Maschinen laufen können. Für die Verbindung benötigt der Client die IP-Adresse und Portnummer des Servers.
+</p>
 
-       
+<center>
+    <img src="socket_connection.jpg" alt="Darstellung einer Socket-Verbindung zwischen Client und Server">
+</center>
+
+<h2>TCP/IP und Ports</h2>
+
+<p>
+    TCP/IP ist das grundlegende Protokoll für die Netzwerkkommunikation. Ports sind 16-Bit-Zahlen, die bestimmten Anwendungen zugeordnet sind. Ports 0-1023 sind für bekannte Dienste reserviert (HTTP, FTP, etc.), während höhere Portnummern für eigene Anwendungen genutzt werden können. Ein Server kann mehrere Anwendungen gleichzeitig betreiben, jede auf einem eigenen Port.
+</p>
+
+<center>
+    <img src="port_numbers.jpg" alt="Tabelle mit bekannten Portnummern">
+</center>
+
+<h2>Client-Server-Architektur</h2>
+
+<p>
+    Der Server erstellt einen ServerSocket auf einem bestimmten Port und wartet auf Client-Anfragen. Bei einer Anfrage akzeptiert der Server die Verbindung und erstellt einen neuen Socket für die Kommunikation mit diesem Client. Der Client verbindet sich mit dem Server über dessen IP und Port.
+</p>
+
+<center>
+    <img src="client_server.jpg" alt="Client-Server-Kommunikation">
+</center>
+
+<h2>Datenübertragung mit Streams</h2>
+
+<p>
+    Die Kommunikation erfolgt über Input- und OutputStreams. Für Textdaten werden BufferedReader (zum Lesen) und PrintWriter (zum Schreiben) verwendet. Diese werden mit den Low-Level-Streams des Sockets verbunden. Der InputStreamReader fungiert als Brücke zwischen Byte- und Zeichenströmen.
+</p>
+
+<center>
+    <img src="streams.jpg" alt="Datenströme in der Netzwerkkommunikation">
+</center>
+
+<h2>Multithreading in Java</h2>
+
+<p>
+    Threads ermöglichen parallele Ausführungsstränge in einer Anwendung. Jeder Thread hat seinen eigenen Aufruf-Stack. Ein Thread benötigt ein Runnable-Objekt, das die auszuführende Arbeit (run()-Methode) definiert. Threads können verschiedene Zustände haben: neu, lauffähig, laufend oder blockiert.
+</p>
+
+<center>
+    <img src="thread_states.jpg" alt="Zustände eines Threads">
+</center>
+
+<h2>Thread-Scheduler und Synchronisation</h2>
+
+<p>
+    Der Thread-Scheduler entscheidet, welcher Thread ausgeführt wird. Es gibt keine Garantien für die Ausführungsreihenfolge. Thread.sleep() kann verwendet werden, um die Ausführung zu pausieren. Bei gemeinsam genutzten Ressourcen kann es zu Race Conditions kommen, die durch Synchronisation gelöst werden müssen.
+</p>
+
+<center>
+    <img src="thread_scheduling.jpg" alt="Thread-Scheduling">
+</center>
+
+<h2>Praktisches Beispiel: Chat-Anwendung</h2>
+
+<p>
+    Als praktisches Beispiel wird eine Chat-Anwendung vorgestellt. Der Server empfängt Nachrichten von Clients und verteilt sie an alle verbundenen Clients. Jeder Client benötigt einen eigenen Thread für das Empfangen von Nachrichten, während der Hauptthread für das Senden zuständig ist.
+</p>
+
+<center>
+    <img src="chat_application.jpg" alt="Architektur einer Chat-Anwendung">
+</center>
     </body>
     <br><br><br><br><br><br>
     <footer class="footer">
