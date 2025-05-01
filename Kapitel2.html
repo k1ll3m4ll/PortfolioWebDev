@@ -46,72 +46,91 @@
                 <h2>Netzwerkprogrammierung mit Sockets</h2>
 
 <p>
-    Die Vorlesung behandelt die Grundlagen der Netzwerkprogrammierung in Java, insbesondere die Verwendung von Sockets für die Client-Server-Kommunikation. Ein Socket repräsentiert eine Verbindung zwischen zwei Anwendungen, die auf verschiedenen Maschinen laufen können. Für die Verbindung benötigt der Client die IP-Adresse und Portnummer des Servers.
+    Die Vorlesung behandelt die Grundlagen der Netzwerkprogrammierung in Java, insbesondere die Verwendung von Sockets für die Client-Server-Kommunikation. Ein Socket repräsentiert eine Verbindung zwischen zwei Anwendungen, die auf verschiedenen Maschinen laufen können. Für die Verbindung benötigt der Client die IP-Adresse und Portnummer des Servers. Java macht die Netzwerkkommunikation besonders einfach, da das Senden und Empfangen von Daten über das Netzwerk ähnlich funktioniert wie einfache Ein-/Ausgabeoperationen. Die Klassen der java.net-Bibliothek kümmern sich um die Low-Level-Netzwerkdetails, während der Programmierer mit vertrauten Stream-Klassen wie BufferedReader und PrintWriter arbeiten kann.
 </p>
 
 <center>
-    <img src="socket_connection.jpg" alt="Darstellung einer Socket-Verbindung zwischen Client und Server">
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL2\VL2\sockets.png" alt="Darstellung einer Socket-Verbindung zwischen Client und Server">
 </center>
+<p>
+</p>
 
 <h2>TCP/IP und Ports</h2>
 
 <p>
-    TCP/IP ist das grundlegende Protokoll für die Netzwerkkommunikation. Ports sind 16-Bit-Zahlen, die bestimmten Anwendungen zugeordnet sind. Ports 0-1023 sind für bekannte Dienste reserviert (HTTP, FTP, etc.), während höhere Portnummern für eigene Anwendungen genutzt werden können. Ein Server kann mehrere Anwendungen gleichzeitig betreiben, jede auf einem eigenen Port.
+    TCP/IP ist das grundlegende Protokoll für die zuverlässige Netzwerkkommunikation. Ports sind 16-Bit-Zahlen (0-65535), die bestimmten Anwendungen zugeordnet sind und die Identifikation verschiedener Dienste auf einem Server ermöglichen. Die Portnummern 0-1023 sind für "wohlbekannte Dienste" reserviert (wie HTTP auf Port 80, FTP auf Port 21 oder SMTP auf Port 25). Für eigene Anwendungen sollten Portnummern oberhalb von 1024 verwendet werden. Der Chat-Server aus dem Beispiel verwendet beispielsweise Port 5000. Wichtig ist, dass auf einem Port immer nur eine Anwendung laufen kann - versucht man, eine zweite Anwendung auf demselben Port zu starten, führt dies zu einer Bind-Exception. Bei der Entwicklung von Server-Anwendungen sollte man sich mit Systemadministratoren abstimmen, welche Ports bereits belegt sind.
 </p>
 
 <center>
-    <img src="port_numbers.jpg" alt="Tabelle mit bekannten Portnummern">
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL2\VL2\portnums.png" alt="Tabelle mit bekannten Portnummern">
 </center>
+<p>
+</p>
 
 <h2>Client-Server-Architektur</h2>
 
 <p>
-    Der Server erstellt einen ServerSocket auf einem bestimmten Port und wartet auf Client-Anfragen. Bei einer Anfrage akzeptiert der Server die Verbindung und erstellt einen neuen Socket für die Kommunikation mit diesem Client. Der Client verbindet sich mit dem Server über dessen IP und Port.
+    In der Client-Server-Architektur erstellt der Server einen ServerSocket auf einem bestimmten Port und wartet mit der accept()-Methode auf eingehende Client-Anfragen. Diese Methode blockiert, bis eine Verbindungsanfrage eingeht. Wenn ein Client eine Verbindung herstellt (durch Erzeugung eines Socket-Objekts mit der Server-IP und Portnummer), erstellt der Server einen neuen Socket für die Kommunikation mit diesem spezifischen Client. Dieser neue Socket verwendet dabei einen anderen Port als der ServerSocket, sodass der Server weiterhin neue Verbindungen annehmen kann. Der Server muss alle Clients kennen, während jeder Client nur den Server kennen muss. In einer Chat-Anwendung würde der Server eingehende Nachrichten empfangen und an alle verbundenen Clients weiterleiten.
 </p>
 
 <center>
-    <img src="client_server.jpg" alt="Client-Server-Kommunikation">
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL2\VL2\CS- sockets and ports .png" alt="Client-Server-Kommunikation">
 </center>
+<p>
+</p>
 
 <h2>Datenübertragung mit Streams</h2>
 
 <p>
-    Die Kommunikation erfolgt über Input- und OutputStreams. Für Textdaten werden BufferedReader (zum Lesen) und PrintWriter (zum Schreiben) verwendet. Diese werden mit den Low-Level-Streams des Sockets verbunden. Der InputStreamReader fungiert als Brücke zwischen Byte- und Zeichenströmen.
+    Die eigentliche Datenübertragung erfolgt über Input- und OutputStreams, die vom Socket bereitgestellt werden. Für Textdaten werden höhere Stream-Klassen wie BufferedReader (zum Lesen) und PrintWriter (zum Schreiben) verwendet, die mit den Low-Level-Streams des Sockets verbunden werden. Der InputStreamReader fungiert dabei als wichtige Brücke zwischen Byte- und Zeichenströmen. Ein großer Vorteil von Java ist, dass diese Streams unabhängig von der eigentlichen Datenquelle (Datei, Netzwerk etc.) auf die gleiche Weise verwendet werden können. Der PrintWriter bietet praktische Methoden wie print() und println() zum Senden von Textnachrichten. Wichtig ist, nach dem Schreiben flush() aufzurufen, um sicherzustellen, dass die Daten tatsächlich gesendet werden. Beim Lesen kann readLine() verwendet werden, um komplette Zeilen vom Server zu empfangen.
 </p>
 
-<center>
-    <img src="streams.jpg" alt="Datenströme in der Netzwerkkommunikation">
-</center>
+
 
 <h2>Multithreading in Java</h2>
 
 <p>
-    Threads ermöglichen parallele Ausführungsstränge in einer Anwendung. Jeder Thread hat seinen eigenen Aufruf-Stack. Ein Thread benötigt ein Runnable-Objekt, das die auszuführende Arbeit (run()-Methode) definiert. Threads können verschiedene Zustände haben: neu, lauffähig, laufend oder blockiert.
+    Threads ermöglichen parallele Ausführungsstränge in einer Anwendung, wobei jeder Thread seinen eigenen Aufruf-Stack hat. Ein Thread benötigt ein Runnable-Objekt, das die auszuführende Arbeit in der run()-Methode definiert. Threads durchlaufen verschiedene Zustände: neu (new) nach der Erstellung, lauffähig (runnable) nach dem Start, laufend (running) wenn sie vom Scheduler ausgewählt wurden, und blockiert (blocked) wenn sie warten (z.B. auf I/O oder eine Sperre). Ein einmal beendeter Thread kann nicht neu gestartet werden. Das klassische Problem der "Dining Philosophers" veranschaulicht die Herausforderungen bei der Synchronisation von Threads: Wenn alle Philosophen gleichzeitig nach der rechten Gabel greifen, entsteht ein Deadlock, bei dem alle Threads blockiert sind und auf Ressourcen warten, die nie freigegeben werden.
 </p>
 
 <center>
-    <img src="thread_states.jpg" alt="Zustände eines Threads">
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL2\VL2\Thread states.png" alt="Zustände eines Threads">
 </center>
+<p>
+</p>
 
 <h2>Thread-Scheduler und Synchronisation</h2>
 
 <p>
-    Der Thread-Scheduler entscheidet, welcher Thread ausgeführt wird. Es gibt keine Garantien für die Ausführungsreihenfolge. Thread.sleep() kann verwendet werden, um die Ausführung zu pausieren. Bei gemeinsam genutzten Ressourcen kann es zu Race Conditions kommen, die durch Synchronisation gelöst werden müssen.
+    Der Thread-Scheduler der JVM entscheidet, welcher Thread ausgeführt wird. Es gibt dabei keine Garantien für die Ausführungsreihenfolge - das Verhalten kann auf verschiedenen JVMs unterschiedlich sein. Thread.sleep() kann verwendet werden, um einen Thread bewusst zu unterbrechen und anderen Threads CPU-Zeit zu geben. Bei gemeinsam genutzten Ressourcen kann es zu Race Conditions kommen, die durch Synchronisationsmechanismen gelöst werden müssen. Ein Beispiel aus der Vorlesung ist der Chat-Client: Während der Hauptthread auf Benutzereingaben wartet, muss ein separater Thread kontinuierlich auf eingehende Nachrichten vom Server lauschen. Ohne Multithreading müsste der Client entweder regelmäßig den Server abfragen (ineffizient) oder könnte nur Nachrichten empfangen, wenn er selbst etwas sendet (unpraktisch).
 </p>
 
 <center>
-    <img src="thread_scheduling.jpg" alt="Thread-Scheduling">
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL2\VL2\thrad scheduling.jpeg" alt="Thread-Scheduling">
 </center>
+<p>
+</p>
 
-<h2>Praktisches Beispiel: Chat-Anwendung</h2>
+<h2>Das Philosophenproblem</h2>
+
+<center>
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL2\VL2\philosophenproblem.png" alt="Das Philosophenproblem">
+</center>
 
 <p>
-    Als praktisches Beispiel wird eine Chat-Anwendung vorgestellt. Der Server empfängt Nachrichten von Clients und verteilt sie an alle verbundenen Clients. Jeder Client benötigt einen eigenen Thread für das Empfangen von Nachrichten, während der Hauptthread für das Senden zuständig ist.
+    Das Philosophenproblem ist ein klassisches Beispiel aus der Informatik, das die Herausforderungen bei der Synchronisation von Threads und der Vermeidung von Deadlocks veranschaulicht. In diesem Gedankenexperiment sitzen mehrere Philosophen (typischerweise fünf) an einem runden Tisch, wo jeder Philosoph einen Teller mit Essen vor sich hat. Zwischen jedem Teller liegt eine einzelne Gabel, sodass sich insgesamt genauso viele Gabeln wie Philosophen am Tisch befinden. Um essen zu können, benötigt jeder Philosoph zwei Gabeln – die rechte und die linke. 
+
+Das Leben der Philosophen besteht aus einem ständigen Wechsel zwischen Denken und Essen. Wenn ein Philosoph hungrig wird, versucht er zunächst, die rechts liegende Gabel zu nehmen und dann die links liegende. Nur wenn er beide Gabeln erfolgreich aufgenommen hat, kann er eine Weile essen. Anschließend legt er beide Gabeln wieder ab und beginnt erneut zu denken. Das Problem entsteht, wenn alle Philosophen gleichzeitig hungrig werden und jeder seine rechte Gabel nimmt. In diesem Fall hat jeder Philosoph eine Gabel in der Hand, aber keine kann die zweite Gabel nehmen, da diese jeweils vom linken Nachbarn gehalten wird. 
+
+Diese Situation führt zu einem Deadlock: Alle Philosophen warten unendlich lange auf die zweite Gabel, während sie ihre eigene bereits gehaltene Gabel nicht ablegen. Da keiner der Philosophen bereit ist, seine Gabel wieder hinzulegen, verhungern sie alle schließlich. Das Philosophenproblem demonstriert damit die Gefahren bei der Ressourcenverwaltung in parallelen Systemen, wo mehrere Prozesse oder Threads auf exklusiven Zugriff auf gemeinsame Ressourcen warten. Es zeigt, wie leicht sich Systeme in unlösbaren Wartesituationen verfangen können, wenn keine geeigneten Synchronisationsmechanismen implementiert werden. 
+
+In der Praxis gibt es verschiedene Lösungsansätze für dieses Problem, etwa die Einführung einer Hierarchie der Ressourcen, das zeitliche Begrenzen von Wartezeiten oder die Verwendung eines zentralen Koordinators, der den Zugriff auf die Gabeln verwaltet. Das Beispiel bleibt jedoch ein wichtiges Lehrstück für die Entwicklung von Algorithmen zur Deadlock-Vermeidung in der parallelen Programmierung.
 </p>
 
-<center>
-    <img src="chat_application.jpg" alt="Architektur einer Chat-Anwendung">
-</center>
+<p>
+</p>
+
+
     </body>
     <br><br><br><br><br><br>
     <footer class="footer">
