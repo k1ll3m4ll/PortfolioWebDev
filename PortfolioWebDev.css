@@ -94,11 +94,14 @@ nav ul {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: space-around;
     z-index: 2; /* Navbar appears above background */
 }
 
 nav ul li {
     float: left;
+    flex: 1;
 }
 nav ul li a.active {
     background-color: blue; /* Vollständig ausgefüllte Hintergrundfarbe */

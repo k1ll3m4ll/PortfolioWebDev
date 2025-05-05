@@ -31,8 +31,7 @@
                 <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
                 <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
                 <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
-                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
-                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
                 
                 
                 <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
@@ -44,36 +43,61 @@
         
         
         <main>
-            <section>
-              <h2>Hyperlinks und Text-Tags</h2>
-              <p>Hyperlinks ermöglichen die Verknüpfung zwischen Ressourcen und werden mit dem <code>&lt;a&gt;</code>-Tag definiert. Wichtige Attribute sind <code>href</code> für die Zieladresse und <code>target</code> für die Art der Öffnung des Links.</p>
-              <p>Beispiel eines Links:</p>
-               <center> <code style="color: violet;">&lt;a href="https://example.com" target="_blank"&gt;Besuche Example&lt;/a&gt;</code> </center>
-              <p>Zusätzlich gibt es semantische Text-Tags wie <code>&lt;strong&gt;</code> für wichtige Texte oder <code>&lt;em&gt;</code> für Betonungen.</p>
-            </section>
-            
-            <section>
-              <h2>Struktur und Integration von Medien</h2>
-              <p>Die empfohlene Projektstruktur sieht eine klare Trennung von HTML-Dateien, CSS und Bildern vor. Relative Pfade stellen sicher, dass Dateien effizient referenziert werden können.</p>
-              <p>Ein Beispiel für eine Verzeichnisstruktur:</p>
-              <center>
-              <code style="color: yellow;">
-              /projekt<br>
-                /css<br>
-                  style.css<br>
-                /images<br>
-                  bild1.jpg<br>
-                  bild2.png<br>
-                index.html<br>
-                kontakt.html<br>
-              </code>
-              </center>
-              <p>Bilder werden über den <code>&lt;img&gt;</code>-Tag eingebunden. Beispiel:</p>
-              
-              <center><code style="color: yellowgreen;">&lt;img src="images/bild1.jpg" alt="Ein Beispielbild"&gt;</code> </center>
-              <p>Weitere Mediendarstellungen wie Programmcode werden mit <code>&lt;code&gt;</code>-Tags hervorgehoben.</p>
-              
-            </section>
+            <h2>Thread-Synchronisation in Java</h2>
+
+<p>
+    Die Vorlesung behandelt fortgeschrittene Konzepte der Thread-Programmierung in Java, insbesondere Nebenläufigkeitsprobleme und Synchronisierung. Ein zentrales Thema ist die Verwendung der Thread.sleep()-Methode, die einen Thread für eine bestimmte Zeit in den Schlafzustand versetzt. Dabei muss die InterruptedException behandelt werden. Wichtig zu beachten ist, dass ein schlafender Thread nach dem Aufwachen nicht automatisch weiterläuft, sondern erst wieder vom Thread-Scheduler ausgewählt werden muss. Die Vorlesung demonstriert anhand eines Beispiels, wie sleep() verwendet werden kann, um die Ausführungsreihenfolge von Threads vorhersehbarer zu gestalten.
+</p>
+
+<center>
+    <img src="Bilder aus Vorlesung Webdev\VL3\Thread sleep.png" alt="Darstellung des Thread-Zustandswechsels durch sleep()">
+</center>
+
+<h2>Nebenläufigkeitsprobleme</h2>
+
+<p>
+    Ein klassisches Problem der Nebenläufigkeit wird am Beispiel eines gemeinsamen Bankkontos zweier Threads (Rainer und Monika) veranschaulicht. Beide Threads prüfen den Kontostand und führen Abhebungen durch, wobei sie zwischen Prüfung und Abhebung einschlafen können. Dies führt zu Dateninkonsistenzen, wenn beide Threads gleichzeitig auf das Konto zugreifen. Das Beispiel zeigt, wie nicht-atomare Operationen zu Überziehungen führen können, obwohl jede Abhebung einzeln gültig wäre. Die Lösung dieses Problems erfordert Synchronisationsmechanismen, die garantieren, dass bestimmte Codeabschnitte als unteilbare Einheit ausgeführt werden.
+</p>
+
+<center>
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL3\Rainer monika.png" alt="Diagramm des Bankkonto-Problems">
+</center>
+
+<h2>Synchronisierung mit synchronized</h2>
+
+<p>
+    Java bietet das Schlüsselwort synchronized zur Lösung von Nebenläufigkeitsproblemen. Jedes Objekt besitzt ein internes Schloss (Lock), das nur ein Thread gleichzeitig halten kann. Synchronisierte Methoden können nur ausgeführt werden, wenn der Thread den Objektschlüssel besitzt. Im Bankkonto-Beispiel wird die Methode abhebungMachen() synchronisiert, wodurch sichergestellt wird, dass ein Thread die gesamte Transaktion (Kontostandprüfung und Abhebung) atomar ausführen kann. Wichtig ist, dass sich die Synchronisierung auf das Objekt bezieht - bei zwei synchronisierten Methoden desselben Objekts kann immer nur eine Methode gleichzeitig ausgeführt werden.
+</p>
+
+<center>
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL3\Objekt lock.png" alt="Darstellung des Objekt-Schlossmechanismus">
+</center>
+
+<h2>Deadlocks und das Problem der verlorenen Aktualisierung</h2>
+
+<p>
+    Ein weiteres wichtiges Konzept ist das "Problem der verlorenen Aktualisierung", das auftritt, wenn zwei Threads gleichzeitig eine Variable inkrementieren. Ohne Synchronisierung können Aktualisierungen verloren gehen. Die Vorlesung zeigt auch die Gefahr von Deadlocks auf, die entstehen, wenn zwei Threads jeweils auf eine Ressource warten, die der andere hält. Deadlocks können vermieden werden, indem man auf die Reihenfolge der Sperren achtet oder Timeouts verwendet. Allerdings bietet Java keine eingebaute Deadlock-Erkennung oder -Behebung, daher ist sorgfältiges Programmieren erforderlich.
+</p>
+
+<center>
+    <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL3\deadlock szenario.png" alt="Beispiel eines Deadlock-Szenarios">
+</center>
+
+<h2>Thread-Kommunikation mit wait() und notify()</h2>
+
+<p>
+    Für komplexere Synchronisationsszenarien stellt Java die Methoden wait(), notify() und notifyAll() bereit, die in der Object-Klasse definiert sind. Diese werden im Kontext des Erzeuger-Verbraucher-Problems vorgestellt, wo ein Thread Daten produziert und ein anderer sie konsumiert. Ein korrekt implementierter Puffer verwendet ein Flag, um den Verfügbarkeitszustand anzuzeigen, und wait()/notify(), um die Threads zu koordinieren. Wichtig ist, dass wait() die Objektsperre freigibt und nach dem Aufwachen erneut versucht, sie zu erlangen. Die Methoden müssen innerhalb eines synchronisierten Blocks aufgerufen werden. Dabei ist dasas Erzeuger-Verbraucher-System ist ein grundlegendes Synchronisationsproblem, das in verteilten Systemen und Netzwerken eine zentrale Rolle spielt. Es modelliert die Interaktion zwischen Komponenten, die Daten produzieren (Erzeuger) und solchen, die sie konsumieren (Verbraucher), oft über einen gemeinsamen Puffer (z. B. eine Nachrichtenwarteschlange).
+</p>
+
+
+
+<h2>Thread-Prioritäten und Best Practices</h2>
+
+<p>
+    Thread-Prioritäten können verwendet werden, um dem Scheduler Hinweise auf die Wichtigkeit von Threads zu geben, bieten aber keine Garantien für die Ausführungsreihenfolge. Die Vorlesung betont, dass Synchronisierung mit Bedacht eingesetzt werden sollte, da sie Overhead verursacht und die Nebenläufigkeit einschränkt. Eine Faustregel ist, nur die notwendigsten Codeabschnitte zu synchronisieren. Für statische Methoden wird das Klassenschloss verwendet, nicht das Instanzschloss. Die Methoden join(), wait(), notify() und notifyAll() bieten zusätzliche Möglichkeiten zur Thread-Koordination, erfordern aber sorgfältige Implementierung um Deadlocks zu vermeiden.
+</p>
+
+
           </main>
           
     </body>

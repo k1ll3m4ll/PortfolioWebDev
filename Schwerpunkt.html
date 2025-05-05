@@ -31,8 +31,7 @@
                 <li> <a href="Kapitel2.html">Vorlesung 2</a></li>
                 <li> <a href="Kapitel3.html">Vorlesung 3</a></li>
                 <li> <a href="Kapitel4.html">Vorlesung 4</a></li>
-                <li> <a href="Kapitel5.html">Vorlesung 5</a></li>
-                <li> <a href="Kapitel6.html">Vorlesung 6</a></li>
+                
                 
                 
                 <li> <a href="Schwerpunkt.html">Schwerpunkt</a></li>
@@ -43,140 +42,125 @@
         </header>
 
         <main>
-        <h1> DNS Spoofing - Wie funktioniert eine Man-in-the-Middle-Attack?  </h1>
-        <center>
-        <video autoplay muted loop preload="auto" > 
-            <source src="C:\Users\malik\Downloads\final_vid_Schwerpunkt.mp4" type="video/mp4"> 
-        </video>
-    </center>
-        </p>
-
-        <p>
-            Das Internet ist für die meisten von uns wie ein magisches Fenster, durch das wir auf Informationen, Dienste und Unterhaltung zugreifen können. Aber hinter der benutzerfreundlichen Oberfläche lauern oft Gefahren – zwei davon sind DNS-Spoofing und die sogenannte Man-in-the-Middle-Attacke (MitM). In diesem Blog erfährst du, wie diese Angriffe funktionieren, warum sie gefährlich sind und wie du dich schützen kannst.
-        </p>
-       
-        <br> <br> <br>
-        <p>
-            <h2>
-                DNS: Das Telefonbuch des Internets
-            </h2>
-            Bevor wir über DNS-Spoofing sprechen, schauen wir uns kurz an, wie das Domain Name System (DNS) funktioniert.
-            Wenn du in deinem Browser www.example.com eingibst, übersetzt DNS diesen Namen in eine IP-Adresse, z. B. 192.168.0.1, damit dein Computer weiß, wo er die Website findet. Ohne DNS müssten wir uns diese langen Zahlen merken – ziemlich unpraktisch.
-            Doch was, wenn jemand dieses „Telefonbuch“ manipuliert? Genau das passiert bei einem DNS-Spoofing-Angriff.
+            <main>
+                <h1> Matchmaking-Systeme – Verteilte Systeme hinter Ranked-Gaming </h1>
+                <center>
+                    
+                        <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL4\sauron sbmm.jpg" alt="MEme">
+                    
+                </center>
             
-
-            <br>
-            <center>
-                <img src="C:\Users\malik\Downloads\DNS-Schema.png" alt="Funktion eines DNS-Servers">
-            </center>
-        </p>
-        
-        <br><br><br>
-        <p>
-            <h2>
-                DNS-Spoofing: Der falsche Wegweiser
-            </h2>
-            Bei DNS-Spoofing manipulieren Angreifer das DNS-System, um falsche Antworten zurückzugeben.
-            Statt auf die echte Website zu gelangen, wirst du zu einer gefälschten Seite umgeleitet. Diese könnte täuschend echt aussehen, um dich dazu zu bringen, Passwörter, Kreditkartendaten oder andere vertrauliche Informationen einzugeben.
-            <br><br>
-<h3> Wie funktioniert DNS-Spoofing?</h3>
-<ol>
-<li>Anfrage starten: Du tippst www.bank.com in deinen Browser. </li>
-<li> DNS-Antwort manipulieren: Der Angreifer fängt die Anfrage ab oder gibt dem DNS-Server eine gefälschte Antwort zurück.</li>
-<li> Umleitung: Statt zur echten Website landest du auf der Seite des Angreifers. </li>
-</ol>
-Das ist, als ob du jemanden nach dem Weg zur Bank fragst und er dich absichtlich zu einem Betrüger schickt, der sich als Bankangestellter ausgibt.
-</p>
-
-
-<br><br><br>
-<p>
-    <h2>
-        Man-in-the-Middle: Der stille Zuhörer   
-    </h2>
-    Man-in-the-Middle-Angriffe (MitM) sind noch heimtückischer. Hier schaltet sich der Angreifer direkt zwischen dich und die echte Website
-    <br>
-
-    <center>
-    <h3> Wie funktioniert ein MitM-Angriff? </h3>
-    
-        <img src="C:\Users\malik\OneDrive\Bilder\Screenshots\Screenshot 2024-12-02 003012.png" alt="">
-    </center>
-    <ul>
-        <li> Der Angreifer fängt den Datenverkehr zwischen dir und der Website ab. </li>
-        <li> Er kann die Daten entweder nur mitlesen oder sogar manipulieren. </li>
-        <li> Oft geschieht das in unsicheren WLAN-Netzwerken oder über gefälschte Webseiten, die mit DNS-Spoofing erreichbar gemacht wurden. </li>
-    </ul>
-    Ein MitM-Angriff ist vergleichbar mit einem Postboten, der deine Briefe liest und möglicherweise verändert, bevor er sie an den Empfänger weiterleitet.
-</p>
-
-<br><br><br>
-    <p>
-<h2>
-    Warum sind diese Angriffe so gefährlich?
-</h2>
-<ul>
- <li><span style="font-weight: bold;">Datendiebstahl:</span> Passwörter, Kreditkarteninformationen oder sensible Daten können abgefangen werden. </li>
- <li> <span style="font-weight: bold;">Identitätsdiebstahl:</span>  Angreifer können sich mit gestohlenen Daten als dich ausgeben. </li>
- <li> <span style="font-weight: bold;">Verbreitung von Malware:</span> Über gefälschte Webseiten kannst du schädliche Software herunterladen </li>
- <li> <span style="font-weight: bold;">Vertrauensverlust:</span> Unternehmen können erheblichen Schaden erleiden, wenn Kunden betrogen werden.  </li>
-</ul>
-</p>
-
-<br><br><br>
-<p>
-<h2> DNS-Spoofing und MitM: Ein perfektes Duo </h2>
-DNS-Spoofing ist oft der erste Schritt zu einem Man-in-the-Middle-Angriff. Angreifer nutzen DNS-Spoofing, um dich auf ihre Server umzuleiten. Dort schalten sie sich dann als „Mittelsmann“ ein, um deine Daten unbemerkt abzugreifen oder zu manipulieren.
-</p>
-
-<br><br><br>
-<section class="protection-measures">
-    <h2>Schutzmaßnahmen</h2>
-    <table>
-        <tr>
-            <td>
-                <h3>Für Nutzer</h3>
-                <ul>
-                    <li><strong>Verwende HTTPS:</strong> Greife nur auf Seiten mit einem Schloss-Symbol zu.</li>
-                    <li><strong>VPN nutzen:</strong> Ein VPN verschlüsselt deinen Datenverkehr und schützt dich in unsicheren Netzwerken.</li>
-                    <li><strong>Software aktuell halten:</strong> Regelmäßige Updates für Betriebssystem und Browser helfen, Sicherheitslücken zu schließen.</li>
-                </ul>
-            </td>
-            <td>
-                <h3>Für Website-Betreiber</h3>
-                <ul>
-                    <li><strong>DNSSEC implementieren:</strong> Diese Technologie verhindert, dass DNS-Antworten gefälscht werden.</li>
-                    <li><strong>SSL-Zertifikate nutzen:</strong> Sie schützen die Verbindung zwischen Nutzer und Website.</li>
-                    <li><strong>Monitoring:</strong> Verdächtige Aktivitäten auf der Website sollten schnell erkannt und behoben werden.</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-</section>
-
-
-
-<section class="secure-box">
-    <p>
-    <h2>Fazit</h2>
-    
-        DNS-Spoofing und Man-in-the-Middle-Angriffe zeigen, wie wichtig Cybersicherheit im digitalen Alltag ist. Sie greifen grundlegende Mechanismen des Internets an und können schwerwiegende Folgen haben.
-    </p>
-    <p>
-        Die gute Nachricht: Mit den richtigen Schutzmaßnahmen kannst du dich effektiv vor diesen Angriffen schützen. Achte auf sichere Verbindungen, halte deine Software aktuell und nutze VPNs, um deine Daten zu schützen.
-    </p>
-    <p>
-        Das Internet ist ein mächtiges Werkzeug – doch es liegt an uns, es sicher zu nutzen.
-    </p>
-</section>
+                <p>
+                    Jeder kennt es: Man klickt auf „Suche Spiel“, und nach wenigen Sekunden steht das Match. Aber wie funktioniert das technisch? Hinter diesem scheinbar einfachen Klick steckt ein hochkomplexes, verteiltes System, das in Echtzeit Millionen von Spielern analysiert, vergleicht und in faire Matches sortiert.
+                </p>
+            
+                <br><br><br>
+                <p>
+                    <h2>Was ist Matchmaking im technischen Sinne?</h2>
+                    Im Kern ist Matchmaking ein Algorithmus, der Spieler anhand mehrerer Kriterien einem Spiel zuweist. Typische Metriken sind:
+                    <ul>
+                        <li><strong>MMR (Matchmaking Rating):</strong> Eine verborgene Zahl, die deine Spielstärke widerspiegelt.</li>
+                        <li><strong>Ping & Standort:</strong> Servernähe wird bevorzugt, um Latenz zu minimieren.</li>
+                        <li><strong>Rolle / Spielmodus:</strong> In Teamspielen wie MOBAs müssen Rollen sinnvoll verteilt werden (z. B. Support, ADC).</li>
+                    </ul>
+                    Diese Faktoren müssen global über verteilte Knoten koordiniert werden.
+                </p>
+            
+                <br><br><br>
+                <p>
+                    <h2>Verteilte Architektur: Wie funktioniert das?</h2>
+                    <center>
+                        <img src="C:\Users\malik\OneDrive\Desktop\PortfolioWebDev\Bilder aus Vorlesung Webdev\VL4\game server arch.png" alt="Verteilte Matchmaking-Architektur">
+                    </center>
+                    <p>Ein typisches System besteht aus:</p>
+                    <ul>
+                        <li><strong>Frontend-Servern:</strong> Nehmen Matchmaking-Anfragen von Clients entgegen.</li>
+                        <li><strong>Load Balancer:</strong> Verteilen Anfragen an freie Matchmaking-Worker.</li>
+                        <li><strong>Matchmaking-Cluster:</strong> Mehrere Knoten weltweit analysieren Spielerpools in Echtzeit.</li>
+                        <li><strong>Game Server Instanzierung:</strong> Wird ein Match gefunden, wird ein dedizierter Game-Server in Spieler-Nähe gestartet.</li>
+                    </ul>
+                    Das System ist global verteilt, um Latenz zu minimieren und hohe Verfügbarkeit sicherzustellen.
+                </p>
+            
+                <br><br><br>
+                <p>
+                    <h2>Real World: Riot Games’ Matchmaking-Infrastruktur</h2>
+                    Riot Games nutzt für League of Legends ein weltweit verteiltes Matchmaking-System:
+                    <ul>
+                        <li><strong>Regionale Server (z. B. EUW, NA):</strong> Entlasten globale Systeme, sorgen für niedrigen Ping.</li>
+                        <li><strong>Datenbanken mit globaler Replikation:</strong> Spielerprofile, Strafen, Rollenverteilungen müssen überall aktuell sein.</li>
+                        <li><strong>Fallbacks bei Überlast:</strong> Warteschlangen priorisieren „Wartezeit vs. Fairness“ dynamisch.</li>
+                    </ul>
+                    <p>Riot’s System nutzt Technologien wie Kubernetes zur Skalierung von Matchmaking-Knoten und RabbitMQ für Event-Synchronisierung.</p>
+                </p>
+            
+                <br><br><br>
+                <p>
+                    <h2>Technologische Herausforderungen</h2>
+                    <ul>
+                        <li><strong>Concurrency:</strong> Tausende gleichzeitige Anfragen müssen verarbeitet werden – ohne Kollision oder Race Conditions.</li>
+                        <li><strong>Fehlertoleranz:</strong> Ausfälle einzelner Nodes dürfen das System nicht stoppen.</li>
+                        <li><strong>Skalierung:</strong> Zu Stoßzeiten (z. B. abends oder bei neuen Releases) müssen Server automatisch nachrüsten können.</li>
+                        <li><strong>Fairness vs. Wartezeit:</strong> Lange Suche ergibt faire Matches, kurze Suche macht Spieler zufriedener – ein ständiges Abwägen.</li>
+                    </ul>
+                </p>
+            
+                <br><br><br>
+                <section class="protection-measures">
+                    <h2>Designprinzipien für stabile Matchmaking-Systeme</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>Backend-Architektur</h3>
+                                <ul>
+                                    <li>Horizontale Skalierung mit Containerisierung (z. B. Docker, Kubernetes)</li>
+                                    <li>Globale Datenreplikation mit eventual consistency (z. B. Apache Cassandra)</li>
+                                    <li>Load Balancing & Heartbeats zur Knotenüberwachung</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <h3>User Experience</h3>
+                                <ul>
+                                    <li>Live-Fortschrittsanzeige („Dein Match wird vorbereitet…“)</li>
+                                    <li>Dynamische Anpassung der Kriterien bei langer Wartezeit</li>
+                                    <li>Strafen bei Match-Abbruch: Schutz vor toxischem Verhalten</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            
+                <br><br><br>
+                <section class="secure-box">
+                    <p>
+                        <h2>Fazit</h2>
+                        Matchmaking-Systeme sind ein Paradebeispiel für moderne verteilte Systeme: hochverfügbar, fehlertolerant, dynamisch skalierbar und in Echtzeit operierend.
+                    </p>
+                    <p>
+                        Was für Spieler wie Magie wirkt, ist im Hintergrund das Ergebnis ausgefeilter Netzwerktechnik, intelligenter Algorithmen und globaler Cloud-Infrastruktur.
+                    </p>
+                    <p>
+                        Ob 1v1 in Rocket League oder 5v5 in Valorant – ohne verteilte Systeme gäbe es kein faires und stabiles Online-Gaming.
+                    </p>
+                </section>
+            
+                <br><br><br>
+                <section class="bonus">
+                    <h2>Bonus: Weiterführende Links</h2>
+                    <ul>
+                        <li><a href="https://technology.riotgames.com/news/fair-matchmaking-league-legends" target="_blank">Riot Games: Fair Matchmaking in League of Legends</a></li>
+                        <li><a href="https://www.gamedeveloper.com/programming/how-dota-2-uses-machine-learning-in-matchmaking" target="_blank">Dota 2 Matchmaking & Machine Learning</a></li>
+                        <li><a href="https://aws.amazon.com/gamelift/" target="_blank">AWS GameLift: Managed Matchmaking & Game Server Hosting</a></li>
+                    </ul>
+                </section>
+            </main>
+            
     <p>
 
     <p> Es wurde folgende Quellen für die Präsentationen sowie Website im Ganzen verwerndet:
         <ul>
-            <li> <a href="https://www.instagram.com/cybertechseries/", style="color: yellow;">Gif von Cybertechseries</a></li>
-            <li><a href="https://www.cloudflare.com/en-gb/learning/dns/dns-cache-poisoning/", style="color: yellow;"> Erklärung DNS-Spoofing, sowie Schutzmaßnahmen etc.</a></li>
-            <li><a href="https://www.giga.de/", style="color: yellow;">DNS-Schema</a></li>
-            <li> <a href="https://www.pinclipart.com/pindetail/xhbbTo_front-end-html-css-javascript-logo-clipart/" , style="color: yellow;">Bilder für die Visualisierung</a></li>
+            <li> <a href="https://theredrad.medium.com/designing-a-distributed-system-for-an-online-multiplayer-game-architecture-part-3-f9483ebbe5ac" , style="color: yellow">Meme am Anfang</a></li>
+            <li> <a href="https://www.reddit.com/r/CallOfDutyMobile/comments/174z2yf/skill_based_matchmaking/" , style="color: yellow">Meme am Anfang</a></li>
             
         </ul>
 
